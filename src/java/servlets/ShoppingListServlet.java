@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author porte
+ * @author Long
  */
 public class ShoppingListServlet extends HttpServlet {
 
@@ -51,12 +51,10 @@ public class ShoppingListServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         
-//        register a user
         if (action.equals("register")) {
             
             String username = request.getParameter("username");
             
-            // if wrong input
             if (username.equals("") || username == null) {
                 getServletContext().getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             } else {
